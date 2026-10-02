@@ -20,12 +20,11 @@ int main()
 
     inFile.open("data.csv");
 
-    bool lineLeft = true;
-    while (lineLeft)
+    
+    while (getline(inFile, line))
     {
         ss.clear();
 
-        getline(inFile, line);
         ss.str(line);
 
         getline(ss, temp, ',');
@@ -46,11 +45,12 @@ int main()
         }
 
         cout << endl;
-
-        if (inFile.eof())
-        {
-            lineLeft = false;
-        }
+        
+        // if (inFile.eof())
+        // {
+        //     lineLeft = false;
+        //     cout << "stopping";
+        // }
     }
 
     inFile.close();
